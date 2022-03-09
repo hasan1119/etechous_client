@@ -28,16 +28,22 @@ const Orders = () => {
       price: order.price,
       description: order.desc,
     };
-    const response = await axios.post("http://localhost:5000/checkout", {
-      token,
-      product,
-    });
+    const response = await axios.post(
+      "https://server-etechouse.herokuapp.com/checkout",
+      {
+        token,
+        product,
+      }
+    );
     const { status } = response.data;
 
     if (status === "success") {
-      await axios.put("http://localhost:5000/checkout/update", {
-        id: order._id,
-      });
+      await axios.put(
+        "https://server-etechouse.herokuapp.com/checkout/update",
+        {
+          id: order._id,
+        }
+      );
       setIsPaid(true);
       toast("Success! Check email for details", { type: "success" });
     } else {
@@ -47,7 +53,7 @@ const Orders = () => {
   ////
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders?email=${email}`)
+    fetch(`https://server-etechouse.herokuapp.com/orders?email=${email}`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -64,7 +70,7 @@ const Orders = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/placeorder/${id}`, {
+        fetch(`https://server-etechouse.herokuapp.com/placeorder/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
