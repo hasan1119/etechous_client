@@ -58,10 +58,16 @@ th {
 .orders td {
   text-align: left !important;
 }
+.sliders {
+  height: calc(100vh - 72px);
+}
 
 @media screen and (max-width: 600px) {
   .carousel-inner div img {
     height: 200px !important;
     object-fit: cover;
+  }
+  .sliders {
+    height: auto !important;
   }
 }

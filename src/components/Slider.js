@@ -7,7 +7,7 @@ import Slider3 from "./../assets/images/slider/3.jpg";
 const Slider = () => {
   return (
     <div>
-      <Carousel style={{ height: "calc(100vh - 72px)" }}>
+      <Carousel className="sliders">
         <Carousel.Item interval={3000}>
           <img
             className="d-block w-100"
