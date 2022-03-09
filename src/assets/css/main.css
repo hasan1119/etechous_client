@@ -64,6 +64,7 @@ th {
 
 @media screen and (max-width: 600px) {
   .carousel-inner div img {
+    width: 100%;
     height: 200px !important;
     object-fit: cover;
   }
