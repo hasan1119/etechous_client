@@ -7,11 +7,11 @@
 //   appId: process.env.REACT_APP_APP_ID,
 // };
 const firebaseConfig = {
-  apiKey: "AIzaSyBSyq1k51MTf3QCBaw7DlXhFhWGh-eXj18",
-  authDomain: "ecommerce-1119.firebaseapp.com",
-  projectId: "ecommerce-1119",
-  storageBucket: "ecommerce-1119.appspot.com",
-  messagingSenderId: "930261023301",
-  appId: "1:930261023301:web:edcc788dcbf0549c26012c"
+  apiKey: "AIzaSyDTChWBIboazIS4lUEZQ7Vg0C8D0C0AoNA",
+  authDomain: "techanalyzen1.firebaseapp.com",
+  projectId: "techanalyzen1",
+  storageBucket: "techanalyzen1.appspot.com",
+  messagingSenderId: "1096317670634",
+  appId: "1:1096317670634:web:90e756709c851f79c23393"
 };
 export default firebaseConfig;

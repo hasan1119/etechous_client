@@ -1,8 +1,8 @@
 import React from "react";
-import contactNow from "./../assets/images/contact.png";
 import { Col, Container, Row } from "react-bootstrap";
-import "./../assets/css/footer.css";
 import Zoom from "react-reveal/Zoom";
+import "./../assets/css/footer.css";
+import contactNow from "./../assets/images/contact.png";
 
 const Footer = () => {
   return (
@@ -26,22 +26,22 @@ const Footer = () => {
                 <div>
                   <ul className="social-icons">
                     <li>
-                      <a href="/d">
+                      <a href="https://www.youtube.com/c/CodingClubBangladesh?sub_confirmation=1/">
                         <i className="fab fa-youtube"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="/d">
+                      <a href="https://www.facebook.com/md.rokibul.hasan.bd/">
                         <i className="fab fa-facebook-square"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="/d">
+                      <a href="https://www.instagram.com/rokibuldev/">
                         <i className="fab fa-instagram"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="/d">
+                      <a href="https://twitter.com/rokibulDev">
                         <i className="fab fa-twitter-square"></i>
                       </a>
                     </li>
