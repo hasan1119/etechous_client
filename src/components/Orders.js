@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Spinner, Table, Button } from "react-bootstrap";
+import { Button, Spinner, Table } from "react-bootstrap";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 
@@ -9,7 +9,7 @@ const Orders = () => {
   console.log(orders);
 
   useEffect(() => {
-    fetch(`https://server-etechouse.herokuapp.com/orders`)
+    fetch(`https://etechouse-server.vercel.app/orders`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -29,7 +29,7 @@ const Orders = () => {
     setOrders(modifiedOrders);
     const modifiedStatus = { id, status };
 
-    fetch("https://server-etechouse.herokuapp.com/updateOrderStatus", {
+    fetch("https://etechouse-server.vercel.app/updateOrderStatus", {
       method: "put",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(modifiedStatus),
@@ -52,7 +52,7 @@ const Orders = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://server-etechouse.herokuapp.com/placeorder/${id}`, {
+        fetch(`https://etechouse-server.vercel.app/placeorder/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

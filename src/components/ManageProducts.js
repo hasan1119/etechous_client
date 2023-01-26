@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const ManageProducts = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://server-etechouse.herokuapp.com/products")
+    fetch("https://etechouse-server.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -29,7 +29,7 @@ const ManageProducts = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://server-etechouse.herokuapp.com/deleteProduct/${id}`, {
+        fetch(`https://etechouse-server.vercel.app/deleteProduct/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

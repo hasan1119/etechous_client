@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
-import { Route, Redirect } from "react-router-dom";
+import { Redirect, Route } from "react-router-dom";
 import useContexts from "../hooks/useContexts.js";
 
 function AdminRoute(props) {
@@ -9,7 +9,7 @@ function AdminRoute(props) {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch(`https://server-etechouse.herokuapp.com/admin/${email}`)
+    fetch(`https://etechouse-server.vercel.app/admin/${email}`)
       .then((res) => res.json())
       .then((data) => {
         setUser(data);

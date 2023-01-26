@@ -9,7 +9,7 @@ const MakeAdmin = () => {
 
   const onSubmit = (data) => {
     axios
-      .put("https://server-etechouse.herokuapp.com/addAdmin", data)
+      .put("https://etechouse-server.vercel.app/addAdmin", data)
       .then((res) => {
         if (res?.data?.modifiedCount) {
           reset();

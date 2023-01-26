@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const useProducts = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://server-etechouse.herokuapp.com/products")
+    fetch("https://etechouse-server.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

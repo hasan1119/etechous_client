@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import {
-  Button,
-  Col,
-  Form,
-  FormControl,
-  InputGroup,
-  Row,
+    Button,
+    Col,
+    Form,
+    FormControl,
+    InputGroup,
+    Row
 } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import Swal from "sweetalert2";
 import { useHistory, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 import "./../assets/css/AddService.css";
 
 const UpdateProduct = () => {
@@ -19,7 +19,7 @@ const UpdateProduct = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    fetch(`https://server-etechouse.herokuapp.com/updateOne/${id}`)
+    fetch(`https://etechouse-server.vercel.app/updateOne/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -36,7 +36,7 @@ const UpdateProduct = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://server-etechouse.herokuapp.com/updateProduct?id=${id}`, {
+        fetch(`https://etechouse-server.vercel.app/updateProduct?id=${id}`, {
           method: "put",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(data),

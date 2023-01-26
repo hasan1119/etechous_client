@@ -1,10 +1,10 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Spinner, Table, Button } from "react-bootstrap";
+import { Button, Spinner, Table } from "react-bootstrap";
 import toast, { Toaster } from "react-hot-toast";
+import StripeCheckout from "react-stripe-checkout";
 import Swal from "sweetalert2";
 import useContexts from "../hooks/useContexts.js";
-import StripeCheckout from "react-stripe-checkout";
-import axios from "axios";
 // import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
@@ -29,7 +29,7 @@ const Orders = () => {
       description: order.desc,
     };
     const response = await axios.post(
-      "https://server-etechouse.herokuapp.com/checkout",
+      "https://etechouse-server.vercel.app/checkout",
       {
         token,
         product,
@@ -39,7 +39,7 @@ const Orders = () => {
 
     if (status === "success") {
       await axios.put(
-        "https://server-etechouse.herokuapp.com/checkout/update",
+        "https://etechouse-server.vercel.app/checkout/update",
         {
           id: order._id,
         }
@@ -53,7 +53,7 @@ const Orders = () => {
   ////
 
   useEffect(() => {
-    fetch(`https://server-etechouse.herokuapp.com/orders?email=${email}`)
+    fetch(`https://etechouse-server.vercel.app/orders?email=${email}`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -70,7 +70,7 @@ const Orders = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://server-etechouse.herokuapp.com/placeorder/${id}`, {
+        fetch(`https://etechouse-server.vercel.app/placeorder/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

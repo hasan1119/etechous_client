@@ -1,15 +1,15 @@
 import React from "react";
 import {
-  Button,
-  Col,
-  Form,
-  FormControl,
-  InputGroup,
-  Row,
+    Button,
+    Col,
+    Form,
+    FormControl,
+    InputGroup,
+    Row
 } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import Swal from "sweetalert2";
 import { useHistory } from "react-router-dom";
+import Swal from "sweetalert2";
 import "./../assets/css/AddService.css";
 
 const AddProduct = () => {
@@ -25,7 +25,7 @@ const AddProduct = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch("https://server-etechouse.herokuapp.com/addProduct", {
+        fetch("https://etechouse-server.vercel.app/addProduct", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(data),
